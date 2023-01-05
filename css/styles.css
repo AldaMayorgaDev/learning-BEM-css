@@ -1,3 +1,11 @@
+/* BEM
+    B ---> BLOQUE
+    E ---> ELEMENTO
+    M ---> MODIFICADOR
+
+    .bloque__elemento--modificador{}
+*/
+
 :root {
     --blanco: #FFF;
     --negro: #111111;
@@ -64,12 +72,99 @@ img {
 .caja-curso p {
     font-size: 2.4rem;
 }
-.caja-curso a {
-    font-size: 2.4rem;
-    padding: 2rem;
-    display: inline-block;
-    text-decoration: none;
-    color: var(--blanco);
-    padding: 0;
+
+
+
+/* BEM */
+
+.productos{
+    margin-top: 5rem;
 }
+
+.productos__heading{
+    color: var(--blanco);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+@media (min-width: 768px) { 
+    .productos__grid{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 3rem;
+    }
+}
+
+
+
+.producto{
+    background-color: var(--blanco);
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) { 
+    .producto{
+        margin-bottom:0;
+    }
+}
+.producto:last-of-type{
+    margin-bottom: 0;
+}
+.producto_imagen{
+
+}
+
+.producto__contenido{
+    padding: 2rem;
+}
+
+.producto__nombre{
+    font-size: 4rem;
+}
+
+.producto__descripcion{
+    color: #8b8b8b;
+    text-align: justify;
+    margin: 0;
+}
+
+.producto__precios{
+    display: flex;
+    justify-content: space-between;
+}
+
+.producto__precio{
+    font-size: 4rem;
+    color: #0071b7;
+    font-weight: 900;
+    margin: 0;
+}
+/* modificador */
+/* bloque__elemento--modificador */
+.producto__precio--oferta{
+    color: #ff4f1e;
+    text-decoration: line-through;
+}
+
+.producto__precio::before{
+    content: "$";
+}
+
+.producto__boton{
+    all: unset;
+    background-color: var(--azul);
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+    color: var(--blanco); 
+    cursor: pointer;
+}
+
+.producto__boton:hover{
+    font-weight: 700;
+    background-color: #014570;
+    border-radius: .5rem;
+}
+
+
 
